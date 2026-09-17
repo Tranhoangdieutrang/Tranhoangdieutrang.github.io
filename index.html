@@ -1051,16 +1051,7 @@
                     class="experience-image"
                 >
 
-              <video
-    class="experience-image"
-    autoplay
-    muted
-    loop
-    playsinline
->
-    <source src="vinuni-2.m4a" type="video/m4a">
-</video>
-
+        
                 <img
                     src="vinuni-3.jpg"
                     alt="VinUni Library experience 3"
@@ -1097,16 +1088,82 @@
             </div>
 
             <!-- Item 4 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="experience-card">
+           <div class="timeline-item">
+
+    <div class="timeline-dot"></div>
+    <div class="experience-card interactive-card"
+         tabindex="0"
+         role="button"
+         onclick="toggleExperience(this)"
+         onkeydown="handleCardKey(event, this)">
+        <div class="card-click-hint"
+     data-vi="Nhấn để xem hình ảnh ↗"
+     data-en="Click to view photos ↗">
+    Nhấn để xem hình ảnh ↗
+</div>
+
+        <!-- GỢI Ý CLICK -->
+        <div class="card-click-hint"
+             data-vi="Nhấn để xem hình ảnh ↗"
+             data-en="Click to view photos ↗">
+            Nhấn để xem hình ảnh ↗
+        </div>
+      <!-- TIÊU ĐỀ -->
                     <h3 data-vi="Hoạt động MC & Sự kiện Đại học" data-en="University Events & MC">Hoạt động MC & Sự kiện Đại học</h3>
                     <div class="role" data-vi="Kinh nghiệm bổ trợ" data-en="Additional Experience">Kinh nghiệm bổ trợ</div>
+              <!-- NỘI DUNG -->
                     <ul>
                         <li data-vi="Dẫn chương trình cho các hoạt động và sự kiện tại trường." data-en="Hosted university activities and events.">Dẫn chương trình cho các hoạt động và sự kiện tại trường.</li>
                         <li data-vi="Rèn luyện khả năng chuẩn bị nội dung, phối hợp và giao tiếp trực tiếp." data-en="Developed preparation, coordination, and live communication skills.">Rèn luyện khả năng chuẩn bị nội dung, phối hợp và giao tiếp trực tiếp.</li>
                        <li data-vi="Đảm nhiệm vai trò Trợ giảng Đại học: Hệ thống hóa kiến thức, biên soạn bài giảng và truyền đạt nội dung học tập hiệu quả tới sinh viên." data-en="Served as a University Teaching Assistant: Structuring course content, preparing lecture materials, and effectively delivering knowledge to students.">Đảm nhiệm vai trò Trợ giảng Đại học: Hệ thống hóa kiến thức, biên soạn bài giảng và truyền đạt nội dung học tập hiệu quả tới sinh viên.</li>
                     </ul>
+
+        <!-- GALLERY -->
+        <div class="experience-media">
+
+            <div class="experience-gallery">
+
+                <img
+                    src="mc-1.g"
+                    alt="VinUni Library experience 1"
+                    class="experience-image"
+                >
+
+        <a
+    href="https://youtu.be/edLBfSGQs4c?si=oJqw4Qf7L_ASkOpS"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="video-card"
+>
+    <div class="video-thumbnail">
+        <img
+            src="https://img.youtube.com/vi/edLBfSGQs4c/hqdefault.jpg"
+            alt="VinUni video"
+        >
+
+        <div class="play-button">
+            ▶
+        </div>
+
+        <div class="video-label"
+             data-vi="Xem video trên YouTube"
+             data-en="Watch on YouTube">
+            Xem video trên YouTube
+        </div>
+    </div>
+</a>
+                <img
+                    src="mc-2.png"
+                    alt="VinUni Library experience 3"
+                    class="experience-image"
+                >
+
+                <img
+                    src="mc-3.png"
+                    alt="VinUni Library experience 4"
+                    class="experience-image"
+                >
+
                 </div>
             </div>
         </div>
