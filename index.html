@@ -154,412 +154,156 @@
             color: white;
         }
 
-      <section class="hero">
-
-    <!-- LEFT -->
-    <div class="hero-content">
-
-        <div class="eyebrow"
-             data-vi="Portfolio cá nhân"
-             data-en="Personal Portfolio">
-        </div>
-
-        <h1>
-            Trang<br>
-            <span>Tran.</span>
-        </h1>
-
-        <p class="hero-description"
-           data-vi="Sinh viên năm cuối ngành Quản trị Thông tin tại Trường Đại học Văn hóa Hà Nội. Tôi quan tâm đến công việc xử lý thông tin, thu thập dữ liệu, kiểm soát chất lượng dữ liệu và các hệ thống số."
-           data-en="Final-year Information Management student at Hanoi University of Culture. Interested in information processing, data collection, data quality, and digital systems.">
-        </p>
-
-        <div class="hero-actions">
-
-            <a class="button button-primary"
-               href="cv.pdf"
-               target="_blank"
-               data-vi="Xem CV"
-               data-en="View CV">
-            </a>
-
-            <a class="button button-secondary"
-               href="#experience"
-               data-vi="Xem kinh nghiệm"
-               data-en="Explore Experience">
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- RIGHT / PHOTO -->
-    <div class="hero-visual">
-
-        <div class="hero-glow"></div>
-
-        <div class="hero-circle"></div>
-
-        <img
-            src="assets/trang-avatar.png"
-            alt="Trang Tran"
-            class="hero-photo"
-        >
-
-        <div class="floating-card floating-card-top">
-
-            <span class="floating-label"
-                  data-vi="Định hướng"
-                  data-en="Focus">
-            </span>
-
-            <strong
-                data-vi="Data & Information"
-                data-en="Data & Information">
-            </strong>
-
-        </div>
-
-
-        <div class="floating-card floating-card-bottom">
-
-            <span class="floating-dot"></span>
-
-            <div>
-
-                <strong
-                    data-vi="Information Management"
-                    data-en="Information Management">
-                </strong>
-
-                <small
-                    data-vi="Data • Systems • Quality"
-                    data-en="Data • Systems • Quality">
-                </small>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
         /* =========================
-   HERO PHOTO
-========================== */
-
-.hero-visual {
-    position: relative;
-    min-height: 570px;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-
-
-/* Ánh sáng phía sau người */
-
-.hero-glow {
-    position: absolute;
-
-    width: 430px;
-    height: 430px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(49, 94, 251, 0.20) 0%,
-            rgba(49, 94, 251, 0.09) 45%,
-            rgba(49, 94, 251, 0) 72%
-        );
-
-    filter: blur(4px);
-
-    top: 48%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-}
-
-
-/* Vòng tròn trang trí */
-
-.hero-circle {
-    position: absolute;
-
-    width: 380px;
-    height: 380px;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            145deg,
-            #dfe7ff,
-            #c8d5ff
-        );
-
-    bottom: 35px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    box-shadow:
-        inset 0 0 50px rgba(255,255,255,0.55),
-        0 25px 70px rgba(49,94,251,0.12);
-}
-
-
-/* Ảnh */
-
-.hero-photo {
-    position: relative;
-    z-index: 4;
-
-    display: block;
-
-    width: 410px;
-    max-width: 95%;
-
-    height: auto;
-
-    object-fit: contain;
-
-    filter:
-        drop-shadow(
-            0 25px 28px rgba(20, 28, 45, 0.16)
-        );
-
-    /* animation ban đầu */
-    opacity: 0;
-
-    transform:
-        translateX(100px)
-        translateY(10px);
-
-    animation:
-        heroPhotoIn 1s cubic-bezier(.22,.8,.3,1)
-        0.15s forwards;
-}
-
-
-/* Ảnh trượt từ phải vào */
-
-@keyframes heroPhotoIn {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateX(100px)
-            translateY(10px)
-            scale(0.97);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateX(0)
-            translateY(0)
-            scale(1);
-    }
-}
-
-
-/* =========================
-   FLOATING CARDS
-========================== */
-
-.floating-card {
-    position: absolute;
-    z-index: 8;
-
-    background: rgba(255,255,255,0.90);
-
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-
-    border: 1px solid rgba(255,255,255,0.8);
-
-    box-shadow:
-        0 18px 45px rgba(23,32,51,0.10);
-
-    border-radius: 16px;
-
-    padding: 14px 17px;
-
-    animation:
-        floatingCardIn
-        0.8s ease
-        0.55s both;
-}
-
-
-/* Card phía trên */
-
-.floating-card-top {
-    top: 90px;
-    right: 8px;
-
-    min-width: 180px;
-}
-
-
-/* Card phía dưới */
-
-.floating-card-bottom {
-    bottom: 65px;
-    left: 8px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 10px;
-
-    min-width: 225px;
-}
-
-
-/* Text */
-
-.floating-label {
-    display: block;
-
-    color: var(--primary);
-
-    font-size: 0.68rem;
-    font-weight: 800;
-
-    letter-spacing: 0.10em;
-    text-transform: uppercase;
-
-    margin-bottom: 4px;
-}
-
-
-.floating-card strong {
-    display: block;
-
-    color: var(--text);
-
-    font-size: 0.88rem;
-}
-
-
-.floating-card-bottom small {
-    display: block;
-
-    color: var(--muted);
-
-    font-size: 0.72rem;
-
-    margin-top: 2px;
-}
-
-
-/* Chấm xanh */
-
-.floating-dot {
-    width: 9px;
-    height: 9px;
-
-    flex: 0 0 auto;
-
-    border-radius: 50%;
-
-    background: #31b77a;
-
-    box-shadow:
-        0 0 0 5px rgba(49,183,122,0.10);
-}
-
-
-/* Animation card */
-
-@keyframes floatingCardIn {
-
-    from {
-        opacity: 0;
-        transform: translateY(18px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-
-/* =========================
-   RESPONSIVE
-========================== */
-
-@media (max-width: 880px) {
-
-    .hero-visual {
-        min-height: 520px;
-    }
-
-    .hero-circle {
-        width: 330px;
-        height: 330px;
-    }
-
-    .hero-photo {
-        width: 390px;
-    }
-
-    .floating-card-top {
-        top: 70px;
-        right: 3%;
-    }
-
-    .floating-card-bottom {
-        bottom: 55px;
-        left: 3%;
-    }
-}
-
-
-@media (max-width: 560px) {
-
-    .hero-visual {
-        min-height: 430px;
-        margin-top: 20px;
-    }
-
-    .hero-circle {
-        width: 285px;
-        height: 285px;
-        bottom: 25px;
-    }
-
-    .hero-photo {
-        width: 340px;
-        max-width: 92%;
-    }
-
-    .floating-card {
-        padding: 11px 13px;
-    }
-
-    .floating-card-top {
-        top: 45px;
-        right: 0;
-    }
-
-    .floating-card-bottom {
-        bottom: 25px;
-        left: 0;
-        min-width: auto;
-    }
-}
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 78vh;
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 56px;
+            align-items: center;
+            padding: 90px 0 80px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: var(--primary-soft);
+            color: var(--primary-dark);
+
+            font-size: 0.78rem;
+            font-weight: 750;
+            letter-spacing: 0.03em;
+            margin-bottom: 20px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5.4rem);
+            line-height: 0.98;
+            letter-spacing: -0.065em;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-description {
+            max-width: 680px;
+            color: var(--muted);
+            font-size: 1.08rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            min-height: 46px;
+            padding: 0 18px;
+            border-radius: 12px;
+
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 700;
+
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-primary {
+            background: var(--text);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .button-primary:hover {
+            background: #0e1421;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .button-secondary {
+            background: white;
+            border: 1px solid var(--line);
+        }
+
+        .hero-card {
+            position: relative;
+            padding: 28px;
+            background:
+                linear-gradient(145deg, rgba(255,255,255,0.96), rgba(245,247,255,0.96));
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            top: -28px;
+            right: -28px;
+
+            width: 110px;
+            height: 110px;
+
+            border-radius: 50%;
+            background: rgba(49, 94, 251, 0.11);
+            filter: blur(2px);
+        }
+
+        .hero-card-label {
+            color: var(--muted);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 18px;
+        }
+
+        .focus-item {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .focus-item:last-child {
+            border-bottom: 0;
+        }
+
+        .focus-item strong {
+            display: block;
+            font-size: 0.95rem;
+            margin-bottom: 3px;
+        }
+
+        .focus-item span {
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
 
         /* =========================
            GENERAL
