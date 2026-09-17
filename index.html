@@ -528,6 +528,117 @@
             color: #344166;
             font-size: 0.88rem;
         }
+        /* =========================
+   INTERACTIVE EXPERIENCE CARD
+========================== */
+
+.interactive-card {
+    position: relative;
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.interactive-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 45px rgba(23, 32, 51, 0.10);
+
+    border-color: rgba(49, 94, 251, 0.25);
+}
+
+.interactive-card:focus-visible {
+    outline: 3px solid rgba(49, 94, 251, 0.22);
+    outline-offset: 3px;
+}
+
+
+/* Dòng "Nhấn để xem..." */
+
+.card-click-hint {
+    position: absolute;
+    top: 20px;
+    right: 22px;
+
+    color: var(--primary);
+
+    font-size: 0.70rem;
+    font-weight: 700;
+
+    opacity: 0;
+    transform: translateY(-4px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.interactive-card:hover .card-click-hint {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Khu vực ảnh - mặc định đóng */
+
+.experience-media {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    margin-top: 0;
+
+    opacity: 0;
+
+    transition:
+        grid-template-rows 0.45s ease,
+        margin-top 0.45s ease,
+        opacity 0.3s ease;
+}
+
+.experience-media > * {
+    overflow: hidden;
+}
+
+
+/* Khi card được mở */
+
+.interactive-card.is-open .experience-media {
+    grid-template-rows: 1fr;
+    margin-top: 24px;
+    opacity: 1;
+}
+
+
+/* Ảnh */
+
+.experience-image {
+    width: 100%;
+    max-height: 500px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 14px;
+
+    border: 1px solid var(--line);
+
+    box-shadow:
+        0 12px 35px rgba(23, 32, 51, 0.08);
+
+    transform: scale(0.97);
+
+    transition:
+        transform 0.5s ease;
+}
+
+.interactive-card.is-open .experience-image {
+    transform: scale(1);
+}
 
         /* =========================
            SKILLS & CERTIFICATES
@@ -836,7 +947,11 @@
             </p>
         </div>
 
-        <div class="timeline">
+       <div class="experience-card interactive-card"
+     tabindex="0"
+     role="button"
+     onclick="toggleExperience(this)"
+     onkeydown="handleCardKey(event, this)">
             <!-- Item 1 -->
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
@@ -853,19 +968,95 @@
             </div>
 
             <!-- Item 2 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="experience-card">
-                    <h3 data-vi="Trung tâm Thư viện và Học liệu VinUni" data-en="VinUni Library and Learning Resources Center.">Trung tâm Thư viện và Học liệu VinUni</h3>
-                    <div class="role" data-vi="Thực tập sinh thư viện" data-en="Library Intern">Thực tập sinh thư viện</div>
-                    <ul>
-                        <li data-vi="Làm quen và tương tác với các hệ thống và công cụ như Alma, Primo VE, LibGuides, RFID và Self-check." data-en="Gained exposure to systems and tools including Alma, Primo VE, LibGuides, RFID, and Self-check.">Làm quen và tương tác với các hệ thống và công cụ như Alma, Primo VE, LibGuides, RFID và Self-check.</li>
-                        <li data-vi="Có trải nghiệm với một số công cụ số như Scaniverse, ThingLink, Spatial và MetaStep trong các hoạt động công nghệ của thư viện." data-en="Gained exposure to digital tools such as Scaniverse, ThingLink, Spatial, and MetaStep through technology-related library activities.">Có trải nghiệm với một số công cụ số như Scaniverse, ThingLink, Spatial và MetaStep trong các hoạt động công nghệ của thư viện.</li>
-                        <li data-vi="Được thực hành và tiếp thu các kiến thức liên quan đến lĩnh vực truyền thông đa phương tiện (Sử dụng máy ghi âm, ghi hình và thiết bị 360 GOPRO" data-en="Gained hands-on experience in multimedia communications, mastering the operation of audio/video recording equipment and GoPro 360 cameras.">Được thực hành và tiếp thu các kiến thức liên quan đến lĩnh vực truyền thông đa phương tiện (Sử dụng máy ghi âm, ghi hình và thiết bị 360 GOPRO.</li>
-                        <li data-vi="Hoàn thành chương trình thực tập tại VinUniversity và nhận Certificate of Appreciation." data-en="Successfully completed the internship program at VinUniversity and received a Certificate of Appreciation.">Hoàn thành chương trình thực tập tại VinUniversity và nhận Certificate of Appreciation.</li>
-                    </ul>
-                </div>
-            </div>
+            <!-- =========================
+     VINUNIVERSITY
+========================== -->
+
+<div class="timeline-item">
+
+    <div class="timeline-dot"></div>
+
+    <div class="experience-card interactive-card"
+         tabindex="0"
+         role="button"
+         onclick="toggleExperience(this)"
+         onkeydown="handleCardKey(event, this)">
+
+        <!-- CLICK HINT -->
+        <div class="card-click-hint"
+             data-vi="Nhấn để xem hình ảnh ↗"
+             data-en="Click to view photos ↗">
+            Nhấn để xem hình ảnh ↗
+        </div>
+
+
+        <!-- TITLE -->
+
+        <h3
+            data-vi="Trung tâm Thư viện và Học liệu VinUni"
+            data-en="VinUni Library and Learning Resources Center">
+            Trung tâm Thư viện và Học liệu VinUni
+        </h3>
+
+
+        <!-- ROLE -->
+
+        <div class="role"
+             data-vi="Thực tập sinh thư viện"
+             data-en="Library Intern">
+            Thực tập sinh thư viện
+        </div>
+
+
+        <!-- EXPERIENCE -->
+
+        <ul>
+
+            <li
+                data-vi="Làm quen và tương tác với các hệ thống và công cụ như Alma, Primo VE, LibGuides, RFID và Self-check."
+                data-en="Gained exposure to systems and tools including Alma, Primo VE, LibGuides, RFID, and Self-check.">
+                Làm quen và tương tác với các hệ thống và công cụ như Alma, Primo VE, LibGuides, RFID và Self-check.
+            </li>
+
+
+            <li
+                data-vi="Có trải nghiệm với một số công cụ số như Scaniverse, ThingLink, Spatial và MetaStep trong các hoạt động công nghệ của thư viện."
+                data-en="Gained exposure to digital tools such as Scaniverse, ThingLink, Spatial, and MetaStep through technology-related library activities.">
+                Có trải nghiệm với một số công cụ số như Scaniverse, ThingLink, Spatial và MetaStep trong các hoạt động công nghệ của thư viện.
+            </li>
+
+
+            <li
+                data-vi="Được thực hành và tiếp thu các kiến thức liên quan đến lĩnh vực truyền thông đa phương tiện, bao gồm sử dụng máy ghi âm, thiết bị ghi hình và GoPro 360."
+                data-en="Gained practical exposure to multimedia communication, including the use of audio recorders, video recording equipment, and GoPro 360 cameras.">
+                Được thực hành và tiếp thu các kiến thức liên quan đến lĩnh vực truyền thông đa phương tiện, bao gồm sử dụng máy ghi âm, thiết bị ghi hình và GoPro 360.
+            </li>
+
+
+            <li
+                data-vi="Hoàn thành chương trình thực tập tại VinUni và nhận Certificate of Appreciation."
+                data-en="Successfully completed the internship program at VinUni and received a Certificate of Appreciation.">
+                Hoàn thành chương trình thực tập tại VinUni và nhận Certificate of Appreciation.
+            </li>
+
+        </ul>
+
+
+        <!-- IMAGE AREA -->
+
+        <div class="experience-media">
+
+            <img
+                src="vinuni-library.jpg"
+                alt="VinUni Library internship"
+                class="experience-image"
+            >
+
+        </div>
+
+    </div>
+
+</div>
 
             <!-- Item 3 -->
             <div class="timeline-item">
