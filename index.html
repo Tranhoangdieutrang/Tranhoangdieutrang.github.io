@@ -528,6 +528,7 @@
             color: #344166;
             font-size: 0.88rem;
         }
+        
         /* =========================
    INTERACTIVE EXPERIENCE CARD
 ========================== */
@@ -967,22 +968,22 @@
                 </div>
             </div>
 
-            <!-- Item 2 -->
-            <!-- =========================
-     VINUNIVERSITY
-========================== -->
-
+<!-- Item 2 -->
 <div class="timeline-item">
 
     <div class="timeline-dot"></div>
-
     <div class="experience-card interactive-card"
          tabindex="0"
          role="button"
          onclick="toggleExperience(this)"
          onkeydown="handleCardKey(event, this)">
+        <div class="card-click-hint"
+     data-vi="Nhấn để xem hình ảnh ↗"
+     data-en="Click to view photos ↗">
+    Nhấn để xem hình ảnh ↗
+</div>
 
-        <!-- CLICK HINT -->
+        <!-- GỢI Ý CLICK -->
         <div class="card-click-hint"
              data-vi="Nhấn để xem hình ảnh ↗"
              data-en="Click to view photos ↗">
@@ -990,7 +991,7 @@
         </div>
 
 
-        <!-- TITLE -->
+        <!-- TIÊU ĐỀ -->
 
         <h3
             data-vi="Trung tâm Thư viện và Học liệu VinUni"
@@ -999,7 +1000,7 @@
         </h3>
 
 
-        <!-- ROLE -->
+        <!-- VỊ TRÍ -->
 
         <div class="role"
              data-vi="Thực tập sinh thư viện"
@@ -1008,7 +1009,7 @@
         </div>
 
 
-        <!-- EXPERIENCE -->
+        <!-- NỘI DUNG -->
 
         <ul>
 
@@ -1018,20 +1019,17 @@
                 Làm quen và tương tác với các hệ thống và công cụ như Alma, Primo VE, LibGuides, RFID và Self-check.
             </li>
 
-
             <li
                 data-vi="Có trải nghiệm với một số công cụ số như Scaniverse, ThingLink, Spatial và MetaStep trong các hoạt động công nghệ của thư viện."
                 data-en="Gained exposure to digital tools such as Scaniverse, ThingLink, Spatial, and MetaStep through technology-related library activities.">
                 Có trải nghiệm với một số công cụ số như Scaniverse, ThingLink, Spatial và MetaStep trong các hoạt động công nghệ của thư viện.
             </li>
 
-
             <li
                 data-vi="Được thực hành và tiếp thu các kiến thức liên quan đến lĩnh vực truyền thông đa phương tiện, bao gồm sử dụng máy ghi âm, thiết bị ghi hình và GoPro 360."
                 data-en="Gained practical exposure to multimedia communication, including the use of audio recorders, video recording equipment, and GoPro 360 cameras.">
                 Được thực hành và tiếp thu các kiến thức liên quan đến lĩnh vực truyền thông đa phương tiện, bao gồm sử dụng máy ghi âm, thiết bị ghi hình và GoPro 360.
             </li>
-
 
             <li
                 data-vi="Hoàn thành chương trình thực tập tại VinUni và nhận Certificate of Appreciation."
@@ -1042,15 +1040,36 @@
         </ul>
 
 
-        <!-- IMAGE AREA -->
-
+        <!-- GALLERY -->
         <div class="experience-media">
 
-            <img
-                src="vinuni-library.jpg"
-                alt="VinUni Library internship"
-                class="experience-image"
-            >
+            <div class="experience-gallery">
+
+                <img
+                    src="assets/vinuni-1.jpg"
+                    alt="VinUni Library experience 1"
+                    class="experience-image"
+                >
+
+                <img
+                    src="assets/vinuni-2.jpg"
+                    alt="VinUni Library experience 2"
+                    class="experience-image"
+                >
+
+                <img
+                    src="assets/vinuni-3.jpg"
+                    alt="VinUni Library experience 3"
+                    class="experience-image"
+                >
+
+                <img
+                    src="assets/vinuni-4.jpg"
+                    alt="VinUni Library experience 4"
+                    class="experience-image"
+                >
+
+            </div>
 
         </div>
 
@@ -1226,6 +1245,35 @@
         const savedLanguage = localStorage.getItem('preferredLanguage') || 'vi';
         setLanguage(savedLanguage);
     });
+    function toggleExperience(card) {
+
+    const isOpen = card.classList.contains("is-open");
+
+    // Đóng các card khác
+    document
+        .querySelectorAll(".interactive-card.is-open")
+        .forEach(function(openCard) {
+
+            if (openCard !== card) {
+                openCard.classList.remove("is-open");
+            }
+
+        });
+
+    // Mở / đóng card được click
+    card.classList.toggle("is-open", !isOpen);
+}
+
+
+function handleCardKey(event, card) {
+
+    if (event.key === "Enter" || event.key === " ") {
+
+        event.preventDefault();
+
+        toggleExperience(card);
+    }
+}
 </script>
 
 </body>
