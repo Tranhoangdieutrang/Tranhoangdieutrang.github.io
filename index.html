@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Trang Tran | Information Management Portfolio</title>
+    <meta
+        name="description"
+        content="Trang Tran - Information Management student with experience in cataloguing, digital information systems and data-oriented workflows."
+    >
+
+    <style>
+        :root {
+            --bg: #f5f7fb;
+            --surface: rgba(255, 255, 255, 0.88);
+            --surface-solid: #ffffff;
+            --text: #172033;
+            --muted: #667085;
+            --line: #e5e9f0;
+
+            --primary: #315efb;
+            --primary-dark: #2448c7;
+            --primary-soft: #eef3ff;
+
+            --success-soft: #edf9f3;
+            --success: #18794e;
+
+            --shadow-sm: 0 8px 25px rgba(23, 32, 51, 0.05);
+            --shadow-lg: 0 20px 60px rgba(23, 32, 51, 0.08);
+
+            --radius-sm: 12px;
+            --radius-md: 18px;
+            --radius-lg: 28px;
+
+            --max-width: 1120px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                ui-sans-serif,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(49, 94, 251, 0.08), transparent 28%),
+                radial-gradient(circle at 90% 15%, rgba(91, 123, 255, 0.08), transparent 24%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .page {
+            width: min(100% - 36px, var(--max-width));
+            margin: 0 auto;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+
+            background: rgba(245, 247, 251, 0.82);
+            border-bottom: 1px solid rgba(229, 233, 240, 0.8);
+        }
+
+        .nav-inner {
+            width: min(100% - 36px, var(--max-width));
+            margin: 0 auto;
+
+            min-height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            text-decoration: none;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .brand span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.92rem;
+            transition: 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .language-switch {
+            display: flex;
+            gap: 4px;
+
+            background: #fff;
+            border: 1px solid var(--line);
+            padding: 4px;
+            border-radius: 999px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .language-switch button {
+            border: 0;
+            background: transparent;
+            color: var(--muted);
+            border-radius: 999px;
+            padding: 7px 11px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .language-switch button.active {
+            background: var(--text);
+            color: white;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 78vh;
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 56px;
+            align-items: center;
+            padding: 90px 0 80px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: var(--primary-soft);
+            color: var(--primary-dark);
+
+            font-size: 0.78rem;
+            font-weight: 750;
+            letter-spacing: 0.03em;
+            margin-bottom: 20px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5.4rem);
+            line-height: 0.98;
+            letter-spacing: -0.065em;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-description {
+            max-width: 680px;
+            color: var(--muted);
+            font-size: 1.08rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            min-height: 46px;
+            padding: 0 18px;
+            border-radius: 12px;
+
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 700;
+
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-primary {
+            background: var(--text);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .button-primary:hover {
+            background: #0e1421;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .button-secondary {
+            background: white;
+            border: 1px solid var(--line);
+        }
+
+        .hero-card {
+            position: relative;
+            padding: 28px;
+            background:
+                linear-gradient(145deg, rgba(255,255,255,0.96), rgba(245,247,255,0.96));
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            top: -28px;
+            right: -28px;
+
+            width: 110px;
+            height: 110px;
+
+            border-radius: 50%;
+            background: rgba(49, 94, 251, 0.11);
+            filter: blur(2px);
+        }
+
+        .hero-card-label {
+            color: var(--muted);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 18px;
+        }
+
+        .focus-item {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .focus-item:last-child {
+            border-bottom: 0;
+        }
+
+        .focus-item strong {
+            display: block;
+            font-size: 0.95rem;
+            margin-bottom: 3px;
+        }
+
+        .focus-item span {
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        /* =========================
+           GENERAL
+        ========================== */
+
+        section {
+            padding: 86px 0;
+            scroll-margin-top: 90px;
+        }
+
+        .section-heading {
+            margin-bottom: 34px;
+        }
+
+        .section-kicker {
+            display: block;
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -0.045em;
+            line-height: 1.05;
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            max-width: 700px;
+            color: var(--muted);
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 32px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: 28px;
+        }
+
+        .card + .card {
+            margin-top: 18px;
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .card-meta {
+            color: var(--primary);
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-text {
+            font-size: 1.04rem;
+            color: #384152;
+        }
+
+        .principles {
+            display: grid;
+            gap: 12px;
+        }
+
+        .principle {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 15px;
+            border-radius: 14px;
+            background: #f8faff;
+            border: 1px solid #e6ebfb;
+        }
+
+        .principle-number {
+            width: 30px;
+            height: 30px;
+            display: grid;
+            place-items: center;
+            flex: 0 0 auto;
+
+            border-radius: 10px;
+            background: var(--primary);
+            color: white;
+
+            font-size: 0.76rem;
+            font-weight: 800;
+        }
+
+        .principle strong {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .principle span {
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================== */
+
+        .education-card {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .education-icon {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+
+            border-radius: 16px;
+            background: var(--primary-soft);
+            color: var(--primary);
+            font-weight: 900;
+        }
+
+        .education-card h3 {
+            margin-bottom: 5px;
+        }
+
+        .education-card .school {
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        /* =========================
+           EXPERIENCE
+        ========================== */
+
+        .timeline {
+            position: relative;
+            margin-left: 8px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+
+            width: 1px;
+            background: var(--line);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 38px;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 7px;
+
+            width: 17px;
+            height: 17px;
+
+            border-radius: 50%;
+            background: var(--primary);
+            border: 4px solid var(--bg);
+            box-shadow: 0 0 0 1px rgba(49, 94, 251, 0.2);
+        }
+
+        .experience-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            padding: 26px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .experience-card h3 {
+            font-size: 1.18rem;
+            margin-bottom: 5px;
+        }
+
+        .role {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.86rem;
+            margin-bottom: 16px;
+        }
+
+        .experience-card ul {
+            padding-left: 19px;
+            color: #3f4858;
+        }
+
+        .experience-card li + li {
+            margin-top: 8px;
+        }
+
+        .experience-note {
+            margin-top: 16px;
+            padding: 14px 16px;
+            border-left: 3px solid var(--primary);
+            background: var(--primary-soft);
+            border-radius: 0 10px 10px 0;
+            color: #344166;
+            font-size: 0.9rem;
+        }
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .skill-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            padding: 23px;
+        }
+
+        .skill-card h3 {
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .chip {
+            padding: 7px 11px;
+            border-radius: 999px;
+            background: #f8f9fc;
+            border: 1px solid var(--line);
+            color: #465064;
+            font-size: 0.79rem;
+        }
+
+        /* =========================
+           CERTIFICATES
+        ========================== */
+
+        .certificate-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .certificate-card {
+            position: relative;
+            overflow: hidden;
+
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            padding: 26px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .certificate-card::after {
+            content: "";
+            position: absolute;
+            right: -25px;
+            bottom: -25px;
+
+            width: 85px;
+            height: 85px;
+
+            border-radius: 50%;
+            background: var(--primary-soft);
+        }
+
+        .certificate-card h3 {
+            margin-bottom: 7px;
+        }
+
+        .certificate-card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .certificate-link {
+            display: inline-flex;
+            margin-top: 16px;
+            color: var(--primary-dark);
+            font-size: 0.83rem;
+            font-weight: 750;
+            text-decoration: none;
+        }
+
+        .certificate-link:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-box {
+            background:
+                linear-gradient(145deg, #182137, #26375d);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: 44px;
+            box-shadow: var(--shadow-lg);
+
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .contact-box .section-kicker {
+            color: #aebeff;
+        }
+
+        .contact-box h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 14px;
+        }
+
+        .contact-box p {
+            color: #d5dbeb;
+            max-width: 620px;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 10px;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: white;
+            padding: 12px 14px;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .contact-info a:hover {
+            background: rgba(255,255,255,0.09);
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 30px 0 45px;
+            color: var(--muted);
+            font-size: 0.82rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+
+            border-top: 1px solid var(--line);
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 880px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                padding-top: 65px;
+            }
+
+            .two-column,
+            .contact-box,
+            .certificate-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .page,
+            .nav-inner {
+                width: min(100% - 24px, var(--max-width));
+            }
+
+            .hero {
+                padding: 52px 0 50px;
+            }
+
+            section {
+                padding: 58px 0;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-card,
+            .card,
+            .experience-card,
+            .certificate-card {
+                padding: 21px;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================== -->
+
+<nav class="navbar">
+    <div class="nav-inner">
+
+        <a class="brand" href="#top">
+            TRANG<span>.</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#about" data-vi="Giới thiệu" data-en="About"></a>
+            <a href="#education" data-vi="Học vấn" data-en="Education"></a>
+            <a href="#experience" data-vi="Kinh nghiệm" data-en="Experience"></a>
+            <a href="#skills" data-vi="Kỹ năng" data-en="Skills"></a>
+            <a href="#certificates" data-vi="Chứng nhận" data-en="Certificates"></a>
+        </div>
+
+        <div class="language-switch">
+            <button id="btn-vi" class="active" onclick="setLanguage('vi')">
+                VI
+            </button>
+
+            <button id="btn-en" onclick="setLanguage('en')">
+                EN
+            </button>
+        </div>
+
+    </div>
+</nav>
+
+
+<main id="top" class="page">
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div>
+
+            <div class="eyebrow"
+                 data-vi="Portfolio cá nhân"
+                 data-en="Personal Portfolio">
+            </div>
+
+            <h1>
+                Trang<br>
+                <span>Tran.</span>
+            </h1>
+
+            <p class="hero-description"
+               data-vi="Sinh viên năm cuối ngành Quản trị Thông tin tại Trường Đại học Văn hóa Hà Nội. Tôi quan tâm đến công việc xử lý thông tin, thu thập dữ liệu, kiểm soát chất lượng dữ liệu và các hệ thống số."
+               data-en="Final-year Information Management student at Hanoi University of Culture. Interested in information processing, data collection, data quality, and digital systems.">
+            </p>
+
+            <div class="hero-actions">
+
+                <!-- Đổi cv.pdf thành tên file CV thật của bạn -->
+                <a class="button button-primary"
+                   href="cv.pdf"
+                   target="_blank"
+                   data-vi="Xem CV"
+                   data-en="View CV">
+                </a>
+
+                <a class="button button-secondary"
+                   href="#experience"
+                   data-vi="Xem kinh nghiệm"
+                   data-en="Explore Experience">
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="hero-card-label"
+                 data-vi="Định hướng"
+                 data-en="Focus">
+            </div>
+
+            <div class="focus-item">
+                <strong data-vi="Xử lý thông tin"
+                        data-en="Information Handling">
+                </strong>
+
+                <span data-vi="Biên mục & tổ chức thông tin"
+                      data-en="Cataloguing & information organization">
+                </span>
+            </div>
+
+            <div class="focus-item">
+                <strong data-vi="Data Operations"
+                        data-en="Data Operations">
+                </strong>
+
+                <span data-vi="Thu thập & kiểm tra dữ liệu"
+                      data-en="Data collection & checking">
+                </span>
+            </div>
+
+            <div class="focus-item">
+                <strong data-vi="Digital Systems"
+                        data-en="Digital Systems">
+                </strong>
+
+                <span data-vi="Làm quen và thích nghi với hệ thống mới"
+                      data-en="Adapting to unfamiliar digital systems">
+                </span>
+            </div>
+
+            <div class="focus-item">
+                <strong data-vi="Communication"
+                        data-en="Communication">
+                </strong>
+
+                <span data-vi="Phối hợp, trình bày và báo cáo vấn đề"
+                      data-en="Coordination, communication & issue reporting">
+                </span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+        <div class="section-heading">
+
+            <span class="section-kicker"
+                  data-vi="01 / Giới thiệu"
+                  data-en="01 / About">
+            </span>
+
+            <h2 data-vi="Tôi làm việc với thông tin."
+                data-en="I work with information.">
+            </h2>
+
+            <p data-vi="Nền tảng Quản trị Thông tin giúp tôi hình thành cách làm việc có cấu trúc, chú ý đến độ chính xác và quen với việc tuân thủ yêu cầu khi xử lý thông tin."
+               data-en="My Information Management background has shaped a structured way of working, with attention to accuracy and established requirements when handling information.">
+            </p>
+
+        </div>
+
+
+        <div class="two-column">
+
+            <div class="card">
+
+                <p class="about-text"
+                   data-vi="Tôi hiện là sinh viên năm cuối ngành Quản trị Thông tin tại Trường Đại học Văn hóa Hà Nội. Kinh nghiệm thực tế của tôi tập trung vào biên mục tại Thư viện Quốc gia Việt Nam, thực tập tại Thư viện VinUniversity và các công việc yêu cầu tổ chức thông tin, sử dụng hệ thống số và giao tiếp."
+                   data-en="I am a final-year Information Management student at Hanoi University of Culture. My practical experience includes cataloguing at the National Library of Vietnam, an internship at VinUniversity Library, and work involving information organization, digital systems, and communication.">
+                </p>
+
+                <br>
+
+                <p class="about-text"
+                   data-vi="Tôi chưa có kinh nghiệm chuyên môn về robot. Thay vào đó, tôi muốn phát triển từ những năng lực mình đã có sang môi trường Data Operations và Data Quality, đồng thời học các công cụ và quy trình kỹ thuật mới."
+                   data-en="I do not have professional robotics experience yet. I am looking to transfer my existing strengths into Data Operations and Data Quality while learning new technical tools and procedures.">
+                </p>
+
+            </div>
+
+
+            <div class="principles">
+
+                <div class="principle">
+
+                    <div class="principle-number">01</div>
+
+                    <div>
+                        <strong data-vi="Cẩn thận"
+                                data-en="Attention to detail">
+                        </strong>
+
+                        <span data-vi="Quen với việc kiểm tra thông tin trước khi hoàn tất."
+                              data-en="Used to checking information before completing a task.">
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="principle">
+
+                    <div class="principle-number">02</div>
+
+                    <div>
+                        <strong data-vi="Tuân thủ quy trình"
+                                data-en="Procedure-oriented">
+                        </strong>
+
+                        <span data-vi="Làm việc theo quy tắc và yêu cầu đã được xác định."
+                              data-en="Comfortable working with defined rules and requirements.">
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="principle">
+
+                    <div class="principle-number">03</div>
+
+                    <div>
+                        <strong data-vi="Học công cụ mới"
+                                data-en="Learning new tools">
+                        </strong>
+
+                        <span data-vi="Đã làm quen với nhiều hệ thống và công cụ số trong thời gian thực tập."
+                              data-en="Experienced in learning multiple digital systems and tools during internship.">
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="principle">
+
+                    <div class="principle-number">04</div>
+
+                    <div>
+                        <strong data-vi="Giao tiếp rõ ràng"
+                                data-en="Clear communication">
+                        </strong>
+
+                        <span data-vi="Có kinh nghiệm trình bày, phối hợp và xử lý tình huống trực tiếp."
+                              data-en="Experienced in communication, coordination, and live situations.">
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section id="education">
+
+        <div class="section-heading">
+
+            <span class="section-kicker"
+                  data-vi="02 / Học vấn"
+                  data-en="02 / Education">
+            </span>
+
+            <h2 data-vi="Học vấn"
+                data-en="Education">
+            </h2>
+
+        </div>
+
+
+        <div class="card education-card">
+
+            <div class="education-icon">
+                HUC
+            </div>
+
+            <div>
+
+                <h3 data-vi="Quản trị Thông tin"
+                    data-en="Information Management">
+                </h3>
+
+                <div class="school"
+                     data-vi="Trường Đại học Văn hóa Hà Nội"
+                     data-en="Hanoi University of Culture">
+                </div>
+
+                <div class="muted"
+                     data-vi="Sinh viên năm cuối · Dự kiến tốt nghiệp 2027"
+                     data-en="Final-year student · Expected graduation: 2027">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
+
+    <section id="experience">
+
+        <div class="section-heading">
+
+            <span class="section-kicker"
+                  data-vi="03 / Kinh nghiệm"
+                  data-en="03 / Experience">
+            </span>
+
+            <h2 data-vi="Kinh nghiệm thực tế"
+                data-en="Practical Experience">
+            </h2>
+
+            <p data-vi="Những trải nghiệm dưới đây là nền tảng tôi đang sử dụng để chuyển sang các công việc liên quan đến Data Operations và Data Quality."
+               data-en="These experiences form the foundation I am building on as I move toward Data Operations and Data Quality roles.">
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <!-- NATIONAL LIBRARY -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="experience-card">
+
+                    <h3 data-vi="Thư viện Quốc gia Việt Nam"
+                        data-en="National Library of Vietnam">
+                    </h3>
+
+                    <div class="role"
+                         data-vi="Biên mục"
+                         data-en="Cataloguing">
+                    </div>
+
+                    <ul>
+
+                        <li data-vi="Thực hiện công việc biên mục tài liệu theo yêu cầu và quy tắc nghiệp vụ."
+                            data-en="Performed cataloguing tasks according to established requirements and professional rules.">
+                        </li>
+
+                        <li data-vi="Làm việc với thông tin thư mục có cấu trúc và chú ý đến độ chính xác của từng trường thông tin."
+                            data-en="Worked with structured bibliographic information and paid close attention to record accuracy.">
+                        </li>
+
+                        <li data-vi="Hình thành thói quen kiểm tra, đối chiếu và duy trì tính nhất quán khi xử lý bản ghi."
+                            data-en="Developed careful checking, comparison, and consistency habits when processing records.">
+                        </li>
+
+                    </ul>
+
+                    <div class="experience-note"
+                         data-vi="Kinh nghiệm biên mục không phải là kinh nghiệm robot, nhưng giúp tôi có nền tảng thực tế trong việc xử lý thông tin có cấu trúc và làm việc theo yêu cầu chuẩn hóa."
+                         data-en="Cataloguing is not robotics experience, but it gave me practical experience in handling structured information under standardized requirements.">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- VINUNIVERSITY -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="experience-card">
+
+                    <h3 data-vi="Thư viện VinUniversity"
+                        data-en="VinUniversity Library">
+                    </h3>
+
+                    <div class="role"
+                         data-vi="Thực tập sinh thư viện"
+                         data-en="Library Intern">
+                    </div>
+
+                    <ul>
+
+                        <li data-vi="Làm quen và tương tác với các hệ thống và công cụ như Alma, Primo VE, LibGuides, EZproxy, RFID và Self-check."
+                            data-en="Gained exposure to systems and tools including Alma, Primo VE, LibGuides, EZproxy, RFID, and Self-check.">
+                        </li>
+
+                        <li data-vi="Có trải nghiệm với một số công cụ số như Scaniverse, ThingLink, Spatial và MetaStep trong các hoạt động công nghệ của thư viện."
+                            data-en="Gained exposure to digital tools such as Scaniverse, ThingLink, Spatial, and MetaStep through technology-related library activities.">
+                        </li>
+
+                        <li data-vi="Hoàn thành chương trình thực tập tại VinUniversity và nhận Certificate of Appreciation."
+                            data-en="Successfully completed the internship program at VinUniversity and received a Certificate of Appreciation.">
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- HAHAWAVE -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="experience-card">
+
+                    <h3 data-vi="HAHAWAVE"
+                        data-en="HAHAWAVE">
+                    </h3>
+
+                    <div class="role"
+                         data-vi="Kinh nghiệm bán hàng"
+                         data-en="Sales Experience">
+                    </div>
+
+                    <ul>
+
+                        <li data-vi="Thu thập thông tin khách hàng và nhu cầu trong quá trình tìm kiếm khách hàng."
+                            data-en="Collected customer information and needs during lead generation.">
+                        </li>
+
+                        <li data-vi="Phân loại khách hàng và theo dõi các bước tiếp theo trong quá trình tư vấn."
+                            data-en="Categorized leads and followed up on next steps in the consultation process.">
+                        </li>
+
+                        <li data-vi="Rèn luyện giao tiếp, tính trách nhiệm và khả năng theo dõi công việc."
+                            data-en="Developed communication, responsibility, and follow-up skills.">
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- MC -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="experience-card">
+
+                    <h3 data-vi="Hoạt động MC & Sự kiện Đại học"
+                        data-en="University Events & MC">
+                    </h3>
+
+                    <div class="role"
+                         data-vi="Kinh nghiệm bổ trợ"
+                         data-en="Additional Experience">
+                    </div>
+
+                    <ul>
+
+                        <li data-vi="Dẫn chương trình cho các hoạt động và sự kiện tại trường."
+                            data-en="Hosted university activities and events.">
+                        </li>
+
+                        <li data-vi="Rèn luyện khả năng chuẩn bị nội dung, phối hợp và giao tiếp trực tiếp."
+                            data-en="Developed preparation, coordination, and live communication skills.">
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+        <div class="section-heading">
+
+            <span class="section-kicker"
+                  data-vi="04 / Kỹ năng"
+                  data-en="04 / Skills">
+            </span>
+
+            <h2 data-vi="Năng lực & công cụ"
+                data-en="Capabilities & Tools">
+            </h2>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <h3 data-vi="Thông tin & dữ liệu"
+                    data-en="Information & Data">
+                </h3>
+
+                <div class="chips">
+
+                    <span class="chip"
+                          data-vi="Xử lý thông tin có cấu trúc"
+                          data-en="Structured information handling">
+                    </span>
+
+                    <span class="chip"
+                          data-vi="Biên mục"
+                          data-en="Cataloguing">
+                    </span>
+
+                    <span class="chip"
+                          data-vi="Kiểm tra thông tin"
+                          data-en="Information checking">
+                    </span>
+
+                    <span class="chip"
+                          data-vi="Tính nhất quán"
+                          data-en="Consistency">
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3 data-vi="Hệ thống số"
+                    data-en="Digital Systems">
+                </h3>
+
+                <div class="chips">
+
+                    <span class="chip">Alma</span>
+                    <span class="chip">Primo VE</span>
+                    <span class="chip">LibGuides</span>
+                    <span class="chip">EZproxy</span>
+                    <span class="chip">RFID</span>
+                    <span class="chip">Self-check</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3 data-vi="Công cụ làm việc"
+                    data-en="Working Tools">
+                </h3>
+
+                <div class="chips">
+
+                    <span class="chip">Microsoft Office</span>
+                    <span class="chip">Excel</span>
+                    <span class="chip">PowerPoint</span>
+                    <span class="chip">Digital Tools</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3 data-vi="Ngôn ngữ & giao tiếp"
+                    data-en="Language & Communication">
+                </h3>
+
+                <div class="chips">
+
+                    <span class="chip">English B1</span>
+
+                    <span class="chip"
+                          data-vi="Thuyết trình"
+                          data-en="Presentation">
+                    </span>
+
+                    <span class="chip"
+                          data-vi="MC / Hosting"
+                          data-en="MC / Hosting">
+                    </span>
+
+                    <span class="chip"
+                          data-vi="Phối hợp"
+                          data-en="Coordination">
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CERTIFICATES
+    ========================== -->
+
+    <section id="certificates">
+
+        <div class="section-heading">
+
+            <span class="section-kicker"
+                  data-vi="05 / Chứng nhận"
+                  data-en="05 / Evidence">
+            </span>
+
+            <h2 data-vi="Chứng nhận & minh chứng"
+                data-en="Certificates & Evidence">
+            </h2>
+
+            <p data-vi="Một số giấy tờ có thể được cung cấp khi cần."
+               data-en="Selected supporting documents available upon request.">
+            </p>
+
+        </div>
+
+
+        <div class="certificate-grid">
+
+            <div class="certificate-card">
+
+                <h3 data-vi="VinUniversity"
+                    data-en="VinUniversity">
+                </h3>
+
+                <p
+                    data-vi="Certificate of Appreciation — ghi nhận việc hoàn thành Library Internship Program tại VinUniversity."
+                    data-en="Certificate of Appreciation — recognizing successful completion of the Library Internship Program at VinUniversity.">
+                </p>
+
+                <!--
+                    Sau khi upload file:
+                    assets/vinuni-certificate.pdf
+                -->
+
+                <a class="certificate-link"
+                   href="assets/vinuni-certificate.pdf"
+                   target="_blank"
+                   data-vi="Xem minh chứng →"
+                   data-en="View evidence →">
+                </a>
+
+            </div>
+
+
+            <div class="certificate-card">
+
+                <h3 data-vi="English Proficiency"
+                    data-en="English Proficiency">
+                </h3>
+
+                <p
+                    data-vi="Kết quả đánh giá trình độ tiếng Anh B1 — 81/100. Đây là kết quả đánh giá, không phải chứng chỉ B1 riêng."
+                    data-en="B1 English proficiency result — 81/100. This is a proficiency result, not a separate B1 certificate.">
+                </p>
+
+                <!--
+                    Nếu muốn công khai:
+                    assets/english-result.pdf
+                -->
+
+                <a class="certificate-link"
+                   href="assets/english-result.pdf"
+                   target="_blank"
+                   data-vi="Xem kết quả →"
+                   data-en="View result →">
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+        <div class="contact-box">
+
+            <div>
+
+                <span class="section-kicker"
+                      data-vi="06 / Liên hệ"
+                      data-en="06 / Contact">
+                </span>
+
+                <h2 data-vi="Cảm ơn bạn đã ghé qua."
+                    data-en="Thank you for visiting.">
+                </h2>
+
+                <p
+                    data-vi="Tôi đang tìm kiếm cơ hội để phát triển thêm kinh nghiệm trong các công việc liên quan đến dữ liệu, thông tin và công nghệ."
+                    data-en="I am looking for opportunities to further develop my experience in data, information, and technology-related work.">
+                </p>
+
+            </div>
+
+
+            <div class="contact-info">
+
+                <!-- Đổi email của bạn -->
+                <a href="mailto:YOUR_EMAIL@example.com">
+                    YOUR_EMAIL@example.com
+                </a>
+
+                <!-- Đổi link LinkedIn của bạn -->
+                <a href="https://www.linkedin.com/"
+                   target="_blank">
+                    LinkedIn
+                </a>
+
+                <!-- Đổi cv.pdf thành CV thật -->
+                <a href="cv.pdf"
+                   target="_blank"
+                   data-vi="Tải CV PDF →"
+                   data-en="Download CV PDF →">
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <span>
+            © 2026 Trang Tran
+        </span>
+
+        <span
+            data-vi="Information Management · Data & Information"
+            data-en="Information Management · Data & Information">
+        </span>
+
+    </footer>
+
+</main>
+
+
+<script>
+
+    function setLanguage(lang) {
+
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll("[data-vi]").forEach(function (element) {
+
+            const content = element.getAttribute("data-" + lang);
+
+            if (content !== null) {
+                element.textContent = content;
+            }
+
+        });
+
+
+        document.getElementById("btn-vi")
+            .classList.toggle("active", lang === "vi");
+
+        document.getElementById("btn-en")
+            .classList.toggle("active", lang === "en");
+
+
+        localStorage.setItem("preferredLanguage", lang);
+    }
+
+
+    // Load saved language
+    const savedLanguage = localStorage.getItem("preferredLanguage") || "vi";
+
+    setLanguage(savedLanguage);
+
+</script>
+
+</body>
+</html>
