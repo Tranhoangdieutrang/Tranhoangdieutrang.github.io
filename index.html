@@ -529,6 +529,7 @@
             font-size: 0.88rem;
         }
         
+        
         /* =========================
    INTERACTIVE EXPERIENCE CARD
 ========================== */
@@ -618,9 +619,9 @@
 
 .experience-image {
     width: 100%;
-    max-height: 500px;
+    height: auto;
 
-    object-fit: cover;
+    object-fit: contain;
 
     display: block;
 
@@ -628,19 +629,16 @@
 
     border: 1px solid var(--line);
 
+    background: #f8f9fc;
+
     box-shadow:
-        0 12px 35px rgba(23, 32, 51, 0.08);
+        0 10px 25px rgba(23, 32, 51, 0.07);
 
     transform: scale(0.97);
 
     transition:
-        transform 0.5s ease;
-}
-        .video-card {
-    display: block;
-    text-decoration: none;
-    border-radius: 14px;
-    overflow: hidden;
+        transform 0.45s ease,
+        box-shadow 0.25s ease;
 }
 
 .video-thumbnail {
