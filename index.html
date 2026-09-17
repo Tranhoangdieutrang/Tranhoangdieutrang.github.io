@@ -636,6 +636,83 @@
     transition:
         transform 0.5s ease;
 }
+        .video-card {
+    display: block;
+    text-decoration: none;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: #111;
+    box-shadow: 0 10px 25px rgba(23, 32, 51, 0.07);
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    transition: transform 0.35s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+    transform: scale(1.04);
+}
+
+.play-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.94);
+    color: #e62117;
+
+    font-size: 1.25rem;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.20);
+
+    transition: transform 0.25s ease;
+}
+
+.video-card:hover .play-button {
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+.video-label {
+    position: absolute;
+
+    left: 12px;
+    bottom: 12px;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    background: rgba(0,0,0,0.65);
+    color: white;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+}
 
 .interactive-card.is-open .experience-image {
     transform: scale(1);
@@ -1050,7 +1127,29 @@
                     alt="VinUni Library experience 1"
                     class="experience-image"
                 >
+<a
+    href="https://youtu.be/edLBfSGQs4c?si=oJqw4Qf7L_ASkOpS"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="video-card"
+>
+    <div class="video-thumbnail">
+        <img
+            src="https://img.youtube.com/vi/edLBfSGQs4c/hqdefault.jpg"
+            alt="VinUni video"
+        >
 
+        <div class="play-button">
+            ▶
+        </div>
+
+        <div class="video-label"
+             data-vi="Xem video trên YouTube"
+             data-en="Watch on YouTube">
+            Xem video trên YouTube
+        </div>
+    </div>
+</a>
         
                 <img
                     src="vinuni-3.jpg"
@@ -1059,7 +1158,7 @@
                 >
 
                 <img
-                    src="vinuni-4.png"
+                    src="vinuni-4.jpg"
                     alt="VinUni Library experience 4"
                     class="experience-image"
                 >
