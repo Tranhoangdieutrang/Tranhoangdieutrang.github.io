@@ -319,11 +319,16 @@
             margin-bottom: 2px;
         }
 
-        .floating-card strong {
-            display: block;
-            color: var(--text);
-            font-size: 0.88rem;
-            font-weight: 700;
+   .floating-card-top {
+    top: 25px;
+    right: -25px; /* Dịch thẻ ra ngoài để tránh đè lên người */
+    max-width: 200px; /* Giới hạn độ rộng để chữ xuống dòng cân đối */
+}
+
+.floating-card-top strong {
+    font-size: 0.82rem; /* Hạ nhẹ cỡ chữ để cụm từ dài hiển thị đẹp hơn */
+    line-height: 1.35;
+}
         }
 
         .floating-card-bottom small {
@@ -729,10 +734,10 @@
             <img src="trang-avatar.png" alt="Trang Tran" class="hero-photo">
 
             <div class="floating-card floating-card-top">
-                <span class="floating-label" data-vi="ĐỊNH HƯỚNG" data-en="FOCUS">ĐỊNH HƯỚNG</span>
-                <strong data-vi="Data & Information" data-en="Data & Information">Data & Information</strong>
-            </div>
-
+    <span class="floating-label" data-vi="ĐỊNH HƯỚNG" data-en="FOCUS">ĐỊNH HƯỚNG</span>
+    <strong data-vi="Data, Information & Communication" data-en="Data, Information & Communication">DATA INFORMATION & COMMUNICATION</strong>
+</div>
+             
             <div class="floating-card floating-card-bottom">
                 <span class="floating-dot"></span>
                 <div>
@@ -983,14 +988,14 @@
             <div>
                 <span class="section-kicker" data-vi="06 / Liên hệ" data-en="06 / Contact">06 / Liên hệ</span>
                 <h2 data-vi="Cảm ơn bạn đã ghé qua." data-en="Thank you for visiting.">Cảm ơn bạn đã ghé qua.</h2>
-                <p data-vi="Tôi đang tìm kiếm cơ hội để phát triển thêm kinh nghiệm trong các công việc liên quan đến dữ liệu, thông tin và công nghệ."
-                   data-en="I am looking for opportunities to further develop my experience in data, information, and technology-related work.">
-                   Tôi đang tìm kiếm cơ hội để phát triển thêm kinh nghiệm trong các công việc liên quan đến dữ liệu, thông tin và công nghệ.
+                <p data-vi="Tôi hướng tới phát triển chuyên môn trong mảng dữ liệu, thông tin và công nghệ, đồng thời ứng dụng năng lực truyền thông để lan tỏa tri thức đến cộng đồng. ."
+                   data-en="Driven to grow at the intersection of data, technology, and information, using communication as a bridge to make knowledge accessible. .">
+                   Tôi hướng tới phát triển chuyên môn trong mảng dữ liệu, thông tin và công nghệ, đồng thời ứng dụng năng lực truyền thông để lan tỏa tri thức đến cộng đồng. .
                 </p>
             </div>
 
             <div class="contact-info">
-                <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a>
+                <a href="hoangdieutrang33@gmail.com">GỬI EMAIL TỚI </a>
                 <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
                 <a href="cv.pdf" target="_blank" data-vi="Tải CV PDF →" data-en="Download CV PDF →">Tải CV PDF →</a>
             </div>
